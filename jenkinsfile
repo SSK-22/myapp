@@ -21,10 +21,11 @@ pipeline {
                 bat 'docker run --name myapp-container myapp'
             }
         }
-        post {
+        
+    }
+    post {
         success {
             archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
         }
-    }
     }
 }
